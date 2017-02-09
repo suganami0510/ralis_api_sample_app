@@ -1,19 +1,89 @@
-/usr/local/bundle/gems/prmd-0.13.0/lib/prmd/multi_loader/loader.rb:112:in `initialize': No such file or directory @ rb_sysopen - schemata/yml/user.yaml (Errno::ENOENT)
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/multi_loader/loader.rb:112:in `open'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/multi_loader/loader.rb:112:in `load_file'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/multi_loader/loader.rb:79:in `load_file'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/load_schema_file.rb:12:in `load_schema_file'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:42:in `load_schema_hash'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:53:in `block in load_files'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:51:in `each'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:51:in `each_with_object'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:51:in `load_files'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:67:in `load_schemas'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:108:in `combine'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/commands/combine.rb:138:in `combine'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/cli/combine.rb:42:in `execute'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/cli/base.rb:141:in `run'
-	from /usr/local/bundle/gems/prmd-0.13.0/lib/prmd/cli.rb:93:in `run'
-	from /usr/local/bundle/gems/prmd-0.13.0/bin/prmd:6:in `<top (required)>'
-	from /usr/local/bundle/bin/prmd:17:in `load'
-	from /usr/local/bundle/bin/prmd:17:in `<main>'
+{
+  "$schema": "http://interagent.github.io/interagent-hyper-schema",
+  "type": [
+    "object"
+  ],
+  "definitions": {
+    "user": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "User",
+      "description": "User API",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of user",
+          "example": 1,
+          "readOnly": true,
+          "type": [
+            "integer"
+          ]
+        },
+        "name": {
+          "description": "user name",
+          "example": "kata0hka",
+          "type": [
+            "string"
+          ]
+        },
+        "mail": {
+          "description": "unique user email",
+          "example": "kata0hka@gmail.com",
+          "type": [
+            "string"
+          ]
+        },
+        "password": {
+          "description": "user password",
+          "example": "my_password",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/user/definitions/id"
+        }
+      },
+      "links": [
+        {
+          "description": "Info for existing user.",
+          "href": "/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        }
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/user/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/user/definitions/name"
+        },
+        "mail": {
+          "$ref": "#/definitions/user/definitions/mail"
+        },
+        "password": {
+          "$ref": "#/definitions/user/definitions/password"
+        }
+      }
+    }
+  },
+  "properties": {
+    "user": {
+      "$ref": "#/definitions/user"
+    }
+  },
+  "description": "Sample Rails5 API",
+  "id": "sample_rails_5",
+  "links": [
+    {
+      "href": "http://0.0.0.0:3000",
+      "rel": "self"
+    }
+  ],
+  "title": "Sample Rails5 API"
+}

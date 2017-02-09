@@ -1,247 +1,4 @@
-latest: Pulling from library/mysql
-Digest: sha256:5e2ec5964847dd78c83410f228325a462a3bfd796b6133b2bdd590b71721fea6
-Status: Downloaded newer image for mysql:latest
-Step 1 : FROM ruby:2.3.1
-2.3.1: Pulling from library/ruby
-Digest: sha256:a5ebd3bc0bf3881258975f8afa1c6d24429dfd4d7dd53a299559a3e927b77fd7
-Status: Downloaded newer image for ruby:2.3.1
- ---> ffe8239a147c
-Step 2 : ENV APP_ROOT /app
- ---> Running in 9c8f1ad1124c
- ---> e91faf75a3af
-Removing intermediate container 9c8f1ad1124c
-Step 3 : RUN apt-get update &&     apt-get install -y build-essential                        mysql-client                        locales &&     sed -i 's/#.*ja_JP\.UTF/ja_JP\.UTF/' /etc/locale.gen &&     locale-gen &&     update-locale LANG=ja_JP.UTF-8
- ---> Running in 70f3a644c24b
-Get:1 http://security.debian.org jessie/updates InRelease [63.1 kB]
-Get:2 http://security.debian.org jessie/updates/main amd64 Packages [436 kB]
-Ign http://deb.debian.org jessie InRelease
-Get:3 http://deb.debian.org jessie-updates InRelease [145 kB]
-Get:4 http://deb.debian.org jessie Release.gpg [2373 B]
-Get:5 http://deb.debian.org jessie Release [148 kB]
-Get:6 http://deb.debian.org jessie-updates/main amd64 Packages [17.6 kB]
-Get:7 http://deb.debian.org jessie/main amd64 Packages [9049 kB]
-Fetched 9862 kB in 15s (644 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  dpkg-dev fakeroot libalgorithm-diff-perl libalgorithm-diff-xs-perl
-  libalgorithm-merge-perl libdbd-mysql-perl libdbi-perl libdpkg-perl
-  libfakeroot libfile-fcntllock-perl libterm-readkey-perl libtimedate-perl
-  mysql-client-5.5 mysql-common
-Suggested packages:
-  debian-keyring libclone-perl libmldbm-perl libnet-daemon-perl
-  libsql-statement-perl
-The following NEW packages will be installed:
-  build-essential dpkg-dev fakeroot libalgorithm-diff-perl
-  libalgorithm-diff-xs-perl libalgorithm-merge-perl libdbd-mysql-perl
-  libdbi-perl libdpkg-perl libfakeroot libfile-fcntllock-perl
-  libterm-readkey-perl libtimedate-perl locales mysql-client mysql-client-5.5
-The following packages will be upgraded:
-  mysql-common
-1 upgraded, 16 newly installed, 0 to remove and 72 not upgraded.
-Need to get 9646 kB of archives.
-After this operation, 61.5 MB of additional disk space will be used.
-Get:1 http://security.debian.org/ jessie/updates/main mysql-common all 5.5.54-0+deb8u1 [81.2 kB]
-Get:2 http://security.debian.org/ jessie/updates/main mysql-client-5.5 amd64 5.5.54-0+deb8u1 [1660 kB]
-Get:3 http://security.debian.org/ jessie/updates/main mysql-client all 5.5.54-0+deb8u1 [79.3 kB]
-Get:4 http://deb.debian.org/debian/ jessie/main locales all 2.19-18+deb8u7 [3946 kB]
-Get:5 http://deb.debian.org/debian/ jessie/main libtimedate-perl all 2.3000-2 [42.2 kB]
-Get:6 http://deb.debian.org/debian/ jessie/main libdpkg-perl all 1.17.27 [1075 kB]
-Get:7 http://deb.debian.org/debian/ jessie/main dpkg-dev all 1.17.27 [1548 kB]
-Get:8 http://deb.debian.org/debian/ jessie/main build-essential amd64 11.7 [7114 B]
-Get:9 http://deb.debian.org/debian/ jessie/main libfakeroot amd64 1.20.2-1 [44.7 kB]
-Get:10 http://deb.debian.org/debian/ jessie/main fakeroot amd64 1.20.2-1 [84.7 kB]
-Get:11 http://deb.debian.org/debian/ jessie/main libalgorithm-diff-perl all 1.19.02-3 [51.7 kB]
-Get:12 http://deb.debian.org/debian/ jessie/main libalgorithm-diff-xs-perl amd64 0.04-3+b1 [12.2 kB]
-Get:13 http://deb.debian.org/debian/ jessie/main libalgorithm-merge-perl all 0.08-2 [13.5 kB]
-Get:14 http://deb.debian.org/debian/ jessie/main libdbi-perl amd64 1.631-3+b1 [816 kB]
-Get:15 http://deb.debian.org/debian/ jessie/main libdbd-mysql-perl amd64 4.028-2+deb8u2 [119 kB]
-Get:16 http://deb.debian.org/debian/ jessie/main libfile-fcntllock-perl amd64 0.22-1+b1 [36.4 kB]
-Get:17 http://deb.debian.org/debian/ jessie/main libterm-readkey-perl amd64 2.32-1+b1 [28.0 kB]
-[91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 9646 kB in 13s (711 kB/s)
-Selecting previously unselected package locales.
-(Reading database ...(Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 21159 files and directories currently installed.)
-Preparing to unpack .../locales_2.19-18+deb8u7_all.deb ...
-Unpacking locales (2.19-18+deb8u7) ...
-Selecting previously unselected package libtimedate-perl.
-Preparing to unpack .../libtimedate-perl_2.3000-2_all.deb ...
-Unpacking libtimedate-perl (2.3000-2) ...
-Selecting previously unselected package libdpkg-perl.
-Preparing to unpack .../libdpkg-perl_1.17.27_all.deb ...
-Unpacking libdpkg-perl (1.17.27) ...
-Selecting previously unselected package dpkg-dev.
-Preparing to unpack .../dpkg-dev_1.17.27_all.deb ...
-Unpacking dpkg-dev (1.17.27) ...
-Selecting previously unselected package build-essential.
-Preparing to unpack .../build-essential_11.7_amd64.deb ...
-Unpacking build-essential (11.7) ...
-Selecting previously unselected package libfakeroot:amd64.
-Preparing to unpack .../libfakeroot_1.20.2-1_amd64.deb ...
-Unpacking libfakeroot:amd64 (1.20.2-1) ...
-Selecting previously unselected package fakeroot.
-Preparing to unpack .../fakeroot_1.20.2-1_amd64.deb ...
-Unpacking fakeroot (1.20.2-1) ...
-Selecting previously unselected package libalgorithm-diff-perl.
-Preparing to unpack .../libalgorithm-diff-perl_1.19.02-3_all.deb ...
-Unpacking libalgorithm-diff-perl (1.19.02-3) ...
-Selecting previously unselected package libalgorithm-diff-xs-perl.
-Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-3+b1_amd64.deb ...
-Unpacking libalgorithm-diff-xs-perl (0.04-3+b1) ...
-Selecting previously unselected package libalgorithm-merge-perl.
-Preparing to unpack .../libalgorithm-merge-perl_0.08-2_all.deb ...
-Unpacking libalgorithm-merge-perl (0.08-2) ...
-Selecting previously unselected package libdbi-perl.
-Preparing to unpack .../libdbi-perl_1.631-3+b1_amd64.deb ...
-Unpacking libdbi-perl (1.631-3+b1) ...
-Selecting previously unselected package libdbd-mysql-perl.
-Preparing to unpack .../libdbd-mysql-perl_4.028-2+deb8u2_amd64.deb ...
-Unpacking libdbd-mysql-perl (4.028-2+deb8u2) ...
-Selecting previously unselected package libfile-fcntllock-perl.
-Preparing to unpack .../libfile-fcntllock-perl_0.22-1+b1_amd64.deb ...
-Unpacking libfile-fcntllock-perl (0.22-1+b1) ...
-Selecting previously unselected package libterm-readkey-perl.
-Preparing to unpack .../libterm-readkey-perl_2.32-1+b1_amd64.deb ...
-Unpacking libterm-readkey-perl (2.32-1+b1) ...
-Preparing to unpack .../mysql-common_5.5.54-0+deb8u1_all.deb ...
-Unpacking mysql-common (5.5.54-0+deb8u1) over (5.5.53-0+deb8u1) ...
-Selecting previously unselected package mysql-client-5.5.
-Preparing to unpack .../mysql-client-5.5_5.5.54-0+deb8u1_amd64.deb ...
-Unpacking mysql-client-5.5 (5.5.54-0+deb8u1) ...
-Selecting previously unselected package mysql-client.
-Preparing to unpack .../mysql-client_5.5.54-0+deb8u1_all.deb ...
-Unpacking mysql-client (5.5.54-0+deb8u1) ...
-Setting up locales (2.19-18+deb8u7) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (TERM is not set, so the dialog frontend is not usable.)
-debconf: falling back to frontend: Readline
-Generating locales (this might take a while)...
-Generation complete.
-Setting up libtimedate-perl (2.3000-2) ...
-Setting up libdpkg-perl (1.17.27) ...
-Setting up dpkg-dev (1.17.27) ...
-Setting up build-essential (11.7) ...
-Setting up libfakeroot:amd64 (1.20.2-1) ...
-Setting up fakeroot (1.20.2-1) ...
-update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
-Setting up libalgorithm-diff-perl (1.19.02-3) ...
-Setting up libalgorithm-diff-xs-perl (0.04-3+b1) ...
-Setting up libalgorithm-merge-perl (0.08-2) ...
-Setting up libdbi-perl (1.631-3+b1) ...
-Setting up libdbd-mysql-perl (4.028-2+deb8u2) ...
-Setting up libfile-fcntllock-perl (0.22-1+b1) ...
-Setting up libterm-readkey-perl (2.32-1+b1) ...
-Setting up mysql-common (5.5.54-0+deb8u1) ...
-Setting up mysql-client-5.5 (5.5.54-0+deb8u1) ...
-Setting up mysql-client (5.5.54-0+deb8u1) ...
-Generating locales (this might take a while)...
-  ja_JP.UTF-8... done
-Generation complete.
- ---> c6d04ee1171e
-Removing intermediate container 70f3a644c24b
-Step 4 : ENV LC_ALL ja_JP.UTF-8
- ---> Running in 4a1da67c694e
- ---> 92e73a7870af
-Removing intermediate container 4a1da67c694e
-Step 5 : RUN mkdir $APP_ROOT
- ---> Running in 7c32ee73780f
- ---> 764f207e917d
-Removing intermediate container 7c32ee73780f
-Step 6 : WORKDIR $APP_ROOT
- ---> Running in 7cd3d3d12401
- ---> e06365f5dc46
-Removing intermediate container 7cd3d3d12401
-Step 7 : ADD Gemfile Gemfile
- ---> a2e7155ae1c2
-Removing intermediate container 5988c7935d63
-Step 8 : ADD Gemfile.lock Gemfile.lock
- ---> c6dea9a499ab
-Removing intermediate container 80c3551e974c
-Step 9 : RUN bundle install -j4
- ---> Running in 78f540a13442
-Warning: the running version of Bundler (1.13.6) is older than the version that created the lockfile (1.14.3). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
-Fetching gem metadata from https://rubygems.org/.........
-Fetching version metadata from https://rubygems.org/..
-Fetching dependency metadata from https://rubygems.org/.
-Installing i18n 0.8.0
-Installing rake 12.0.0
-Installing concurrent-ruby 1.0.4
-Installing builder 3.2.3
-Installing minitest 5.10.1
-Installing thread_safe 0.3.5
-Installing erubis 2.7.0
-Installing mini_portile2 2.1.0
-Installing rack 2.0.1
-Installing websocket-extensions 0.1.2
-Installing nio4r 1.2.1 with native extensions
-Installing jsonapi-parser 0.1.1.beta3
-Installing mime-types-data 3.2016.0521
-Installing jsonapi-renderer 0.1.1.beta1
-Installing arel 7.1.4
-Installing byebug 9.0.6 with native extensions
-Installing coderay 1.1.1
-Installing diff-lcs 1.3
-Installing method_source 0.8.2
-Installing thor 0.19.4
-Installing json_schema 0.16.1
-Installing ffi 1.9.17 with native extensions
-Installing redcarpet 3.4.0 with native extensions
-Installing rb-fsevent 0.9.8
-Installing slop 3.6.0
-Using bundler 1.13.6
-Installing mysql2 0.4.5 with native extensions
-Installing puma 3.7.0 with native extensions
-Installing rspec-support 3.5.0
-Installing rack-test 0.6.3
-Installing sprockets 3.7.1
-Installing websocket-driver 0.6.5 with native extensions
-Installing mime-types 3.1
-Installing jsonapi 0.1.1.beta6
-Installing prmd 0.13.0
-Installing rb-inotify 0.9.8
-Installing pry 0.10.4
-Installing rspec-core 3.5.4
-Installing rspec-expectations 3.5.0
-Installing rspec-mocks 3.5.0
-Installing tzinfo 1.2.2
-Installing listen 3.0.8
-Installing pry-byebug 3.4.2
-Installing nokogiri 1.7.0.1 with native extensions
-Installing activesupport 5.0.1
-Installing mail 2.6.4
-Installing globalid 0.3.7
-Installing activemodel 5.0.1
-Installing factory_girl 4.8.0
-Installing jdoc 0.4.2
-Installing spring 2.0.1
-Installing rails-dom-testing 2.0.2
-Installing activejob 5.0.1
-Installing loofah 2.0.3
-Installing activerecord 5.0.1
-Installing rack-json_schema 1.5.2
-Installing spring-watcher-listen 2.0.1
-Installing rails-html-sanitizer 1.0.3
-Installing actionview 5.0.1
-Installing actionpack 5.0.1
-Installing case_transform 0.2
-Installing railties 5.0.1
-Installing sprockets-rails 3.2.0
-Installing active_model_serializers 0.10.4
-Installing factory_girl_rails 4.8.0
-Installing rspec-rails 3.5.2
-Installing actionmailer 5.0.1
-Installing actioncable 5.0.1
-Installing rails 5.0.1
-Bundle complete! 13 Gemfile dependencies, 69 gems now installed.
-Bundled gems are installed into /usr/local/bundle.
- ---> 6ec0f4f5c374
-Removing intermediate container 78f540a13442
-Step 10 : ADD . $APP_ROOT
- ---> ded60db90e36
-Removing intermediate container 6748896d225e
-Successfully built ded60db90e36
+
 ---
 "$schema": http://json-schema.org/draft-04/hyper-schema
 title: User
@@ -259,12 +16,12 @@ definitions:
     - integer
   name:
     description: user name
-    example: 'suganami'
+    example: 'kata0hka'
     type:
     - string
   mail:
-    description: unique user password
-    example: 'ryosuke.suganami@gmail.com'
+    description: unique user email
+    example: 'kata0hka@gmail.com'
     type:
     - string
   password:
@@ -275,7 +32,7 @@ definitions:
   identity:
     $ref: "/schemata/user#/definitions/id"
 links:
-- description: Into for existing user.
+- description: Info for existing user.
   href: "/users/{(%2Fschemata%2Fuser%23%2Fdefinitions%2Fidentity)}"
   method: GET
   rel: self
