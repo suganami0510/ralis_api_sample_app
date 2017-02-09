@@ -1,0 +1,2 @@
+# ralis_api_sample_app
+Rails5 でのAPIのサンプル用アプリケーション
